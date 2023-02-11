@@ -6,7 +6,7 @@ import os
 import pandas as pd  
 from transformers import GPT2TokenizerFast
 
-OPENAI_API_KEY = <YOUR_API_KEY>
+OPENAI_API_KEY = "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"
 MODEL_NAME = "curie"
 DOC_EMBEDDINGS_MODEL = f"text-search-{MODEL_NAME}-doc-001"
 QUERY_EMBEDDINGS_MODEL = f"text-search-{MODEL_NAME}-query-001"
@@ -108,7 +108,7 @@ def load_embeddings(fname: str) -> dict[tuple[str, str], list[float]]:
 
 separator_len = len(tokenizer.tokenize(SEPARATOR))
 
-def construct_prompt(question: str, context_embeddings: dict, df: pd.DataFrame) -> str:
+def construct_prompt(question: str, df: pd.DataFrame, context_embeddings: dict) -> str:
     most_relevant_document_sections = order_document_sections_by_query_similarity(question, context_embeddings)
     
     chosen_sections = []
@@ -164,13 +164,12 @@ def main():
     # tokenzied = compute_num_tokens(df)
     # write_tokenzied_data_to_csv(tokenzied)
 
-    df = pd.read_csv("test.csv", header=0)
+    df = pd.read_csv("/Users/tbill/Documents/mun-chat-bot/server/test.csv", header=0)
     df.index = df["heading"]
-    document_embeddings = load_embeddings("embedded.csv")
-    query = "What courses do i have to do to get a degree in bio chemistry?"
+    document_embeddings = load_embeddings("/Users/tbill/Documents/mun-chat-bot/server/embedded.csv")
+    query = "Give me one 2nd year Computer Science course"
     answer = answer_query_with_context(query, df, document_embeddings)  
     print(f"\nQ: {query}\nA: {answer}")
-
 
 def answer_query(query:str) -> str:
     df = pd.read_csv("test.csv", header=0)
@@ -180,3 +179,5 @@ def answer_query(query:str) -> str:
     print(f"\nQ: {query}\nA: {answer}")
     return answer
 
+if __name__ == '__main__':
+    main()

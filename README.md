@@ -49,7 +49,7 @@ This is a web application that students can use to ask any question related to u
 * React.js
 * Python
 * Flask
-* OpenAI 
+* OpenAI API
 * Transfromers
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -57,7 +57,7 @@ This is a web application that students can use to ask any question related to u
 
 ### Key Features
 
-* Can answer any question about the university. (NOTE: the dataset included in the project is only for testing purposes)
+* Can answer any question about the university program regulations. (NOTE: the dataset included in the project is only for testing purposes and is only limited to Faculty of Science information.)
 * Web based user interface to interact with the application.
 
 <!-- GETTING STARTED -->

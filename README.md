@@ -3,10 +3,10 @@
 <br />
 <div align="center">
 
-  <h3 align="center">Mun Chat Bot</h3>
+  <h3 align="center">Mun Ask_Bot</h3>
 
   <p align="center">
-    Question answering system using document embedding
+    Question answering system using document embeddings!
   </p>
 </div>
 
@@ -40,7 +40,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-This is a web application that students can use to ask any question related to university. 
+This is a web application that students can use to ask any question related their study at MUN. 
 
 ### Built With
 
@@ -51,14 +51,18 @@ This is a web application that students can use to ask any question related to u
 * Flask
 * OpenAI API
 * Transfromers
+* py-BeautifulSoup
+* py-Pandas
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
 ### Key Features
 
-* Can answer any question about the university program regulations. (NOTE: the dataset included in the project is only for testing purposes and is only limited to Faculty of Science information.)
+* Can answer any question about the university program regulations like what courses to do, prerequisites, labs and etc.
+* NOTE: the dataset included in the project is only for testing purposes and is only limited to Faculty of Science information.
 * Web based user interface to interact with the application.
+* Fine tuning the results for faster and accurate results coming very soon!
 
 <!-- GETTING STARTED -->
 ## Getting Started

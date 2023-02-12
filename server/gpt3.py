@@ -119,9 +119,8 @@ def main():
     print(f"\nQ: {question}\nA: {answer}")
 
 def answer_query(query:str) -> str:
-    df = pd.read_csv("test.csv", header=0)
-    df.index = df["heading"]
-    document_embeddings = load_embeddings("embedded.csv")
+    df = pd.read_csv("FScience.csv", header=0)
+    document_embeddings = load_embeddings("FScience_embed.csv")
     answer = answer_query_with_context(query, df, document_embeddings)  
     print(f"\nQ: {query}\nA: {answer}")
     return answer
